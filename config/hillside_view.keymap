@@ -35,9 +35,6 @@
         y-invert;
         scale-multiplier = <2>;
         
-
- 
-
         // xy-swap;
         // x-invert;
     };
@@ -54,19 +51,6 @@
         // evt-type = <INPUT_EV_REL>;
         // x-input-code = <INPUT_REL_X>;
         // y-input-code = <INPUT_REL_Y>;
-    };
-
-    tpad_peripheral_scroll {
-        compatible = "zmk,input-behavior-listener";
-        device = <&glidepoint1>;
-        layers = <QWERTY_L>;
-
-        /* NOTE: only apply input-code overriding for INPUT_EV_REL */
-
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_HWHEEL>;
-        y-input-code = <INPUT_REL_WHEEL>;
-        bindings = <&ib_wheel_scaler 1 8>;
     };
 
     ib_wheel_scaler: ib_wheel_scaler {
@@ -251,7 +235,7 @@
            &kp LGUI  &kp LALT  &sk LSHIFT  &mo 1                    &mo 2  &kp SPACE  &kp LALT  &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         nav_layer {
@@ -271,7 +255,7 @@
           &trans    &trans    &trans     &trans                               &mo 3     &trans     &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
         sym_layer {
@@ -291,7 +275,7 @@
          &trans    &trans     &trans     &mo 3                                   &trans     &trans      &trans        &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
         adj_layer {
@@ -311,7 +295,7 @@
             &trans        &trans        &trans        &trans                                      &trans   &trans       &trans           &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
